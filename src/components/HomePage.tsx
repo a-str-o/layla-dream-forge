@@ -51,7 +51,7 @@ const HomePage = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 hero-gradient"></div>
         <div 
-          className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 opacity-10 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         ></div>
         

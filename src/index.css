@@ -2,56 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 42Layla Design System - Alf Layla wa Layla (Arabian Nights) */
+/* 42Layla Design System - Purple Arabian Nights */
 
 @layer base {
   :root {
-    /* Core Brand Colors - Thousand and One Nights */
-    --background: 240 80% 4%;
+    /* Core Brand Colors - Purple Arabian Nights */
+    --background: 270 80% 4%;
     --foreground: 45 95% 97%;
 
-    --card: 240 85% 8%;
+    --card: 270 85% 8%;
     --card-foreground: 45 90% 95%;
 
-    --popover: 240 90% 12%;
+    --popover: 270 90% 12%;
     --popover-foreground: 45 90% 95%;
 
-    /* Primary - Midnight Sapphire */
-    --primary: 235 95% 45%;
+    /* Primary - Deep Amethyst */
+    --primary: 270 95% 50%;
     --primary-foreground: 45 95% 97%;
-    --primary-glow: 235 95% 55%;
+    --primary-glow: 270 95% 60%;
 
-    /* Secondary - Desert Crimson */
-    --secondary: 0 85% 50%;
+    /* Secondary - Royal Violet */
+    --secondary: 260 85% 45%;
     --secondary-foreground: 45 95% 97%;
 
-    /* Muted - Shadow Stone */
-    --muted: 240 60% 15%;
-    --muted-foreground: 240 30% 70%;
+    /* Muted - Purple Shadow */
+    --muted: 270 60% 15%;
+    --muted-foreground: 270 30% 70%;
 
-    /* Accent - Arabian Gold */
-    --accent: 40 100% 45%;
-    --accent-foreground: 240 85% 8%;
+    /* Accent - Mystic Gold */
+    --accent: 50 100% 50%;
+    --accent-foreground: 270 85% 8%;
 
     --destructive: 0 90% 55%;
     --destructive-foreground: 45 95% 97%;
 
-    --border: 240 60% 20%;
-    --input: 240 70% 12%;
-    --ring: 235 95% 45%;
+    --border: 270 60% 20%;
+    --input: 270 70% 12%;
+    --ring: 270 95% 50%;
 
     /* Design System Tokens */
     --radius: 0.75rem;
     
-    /* Gradients - Arabian Nights */
-    --gradient-hero: linear-gradient(135deg, hsl(240 85% 8%), hsl(235 95% 20%), hsl(40 100% 25%));
-    --gradient-aurora: linear-gradient(90deg, hsl(235 95% 45%), hsl(0 85% 50%), hsl(40 100% 45%));
-    --gradient-card: linear-gradient(145deg, hsl(240 90% 12%), hsl(240 85% 16%));
+    /* Gradients - Purple Arabian Nights */
+    --gradient-hero: linear-gradient(135deg, hsl(270 85% 8%), hsl(270 95% 20%), hsl(50 100% 25%));
+    --gradient-aurora: linear-gradient(90deg, hsl(270 95% 50%), hsl(260 85% 45%), hsl(50 100% 50%));
+    --gradient-card: linear-gradient(145deg, hsl(270 90% 12%), hsl(270 85% 16%));
     
     /* Shadows & Effects */
-    --shadow-glow: 0 0 40px hsl(235 95% 45% / 0.4);
-    --shadow-aurora: 0 0 60px hsl(40 100% 45% / 0.3);
-    --shadow-card: 0 8px 32px hsl(240 85% 4% / 0.6);
+    --shadow-glow: 0 0 40px hsl(270 95% 50% / 0.4);
+    --shadow-aurora: 0 0 60px hsl(50 100% 50% / 0.3);
+    --shadow-card: 0 8px 32px hsl(270 85% 4% / 0.6);
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);

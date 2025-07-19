@@ -130,7 +130,7 @@
   }
   
   .aurora-gradient {
-    background: var(--gradient-aurora);
+    background: hsl(var(--accent));
   }
   
   .card-gradient {

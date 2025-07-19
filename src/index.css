@@ -2,56 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 42Layla Design System - Disney Aladdin Color Palette */
+/* 42Layla Design System - Alf Layla wa Layla (Arabian Nights) */
 
 @layer base {
   :root {
-    /* Core Brand Colors - Disney Aladdin Palette */
-    --background: 240 60% 6%;
-    --foreground: 45 100% 98%;
+    /* Core Brand Colors - Thousand and One Nights */
+    --background: 240 80% 4%;
+    --foreground: 45 95% 97%;
 
-    --card: 240 65% 10%;
-    --card-foreground: 45 95% 96%;
+    --card: 240 85% 8%;
+    --card-foreground: 45 90% 95%;
 
-    --popover: 240 70% 14%;
-    --popover-foreground: 45 95% 96%;
+    --popover: 240 90% 12%;
+    --popover-foreground: 45 90% 95%;
 
-    /* Primary - Aladdin Royal Blue */
-    --primary: 220 100% 50%;
-    --primary-foreground: 45 100% 98%;
-    --primary-glow: 220 100% 60%;
+    /* Primary - Midnight Sapphire */
+    --primary: 235 95% 45%;
+    --primary-foreground: 45 95% 97%;
+    --primary-glow: 235 95% 55%;
 
-    /* Secondary - Jasmine Teal */
-    --secondary: 180 100% 35%;
-    --secondary-foreground: 45 100% 98%;
+    /* Secondary - Desert Crimson */
+    --secondary: 0 85% 50%;
+    --secondary-foreground: 45 95% 97%;
 
-    /* Muted - Palace Stone */
-    --muted: 240 40% 20%;
-    --muted-foreground: 240 25% 75%;
+    /* Muted - Shadow Stone */
+    --muted: 240 60% 15%;
+    --muted-foreground: 240 30% 70%;
 
-    /* Accent - Genie Gold */
-    --accent: 45 100% 50%;
-    --accent-foreground: 240 65% 10%;
+    /* Accent - Arabian Gold */
+    --accent: 40 100% 45%;
+    --accent-foreground: 240 85% 8%;
 
-    --destructive: 0 100% 55%;
-    --destructive-foreground: 45 100% 98%;
+    --destructive: 0 90% 55%;
+    --destructive-foreground: 45 95% 97%;
 
-    --border: 240 40% 25%;
-    --input: 240 50% 18%;
-    --ring: 220 100% 50%;
+    --border: 240 60% 20%;
+    --input: 240 70% 12%;
+    --ring: 235 95% 45%;
 
     /* Design System Tokens */
     --radius: 0.75rem;
     
-    /* Gradients - Updated for Disney Aladdin */
-    --gradient-hero: linear-gradient(135deg, hsl(240 65% 10%), hsl(220 100% 20%), hsl(45 100% 25%));
-    --gradient-aurora: linear-gradient(90deg, hsl(220 100% 50%), hsl(180 100% 35%), hsl(45 100% 50%));
-    --gradient-card: linear-gradient(145deg, hsl(240 70% 14%), hsl(240 65% 18%));
+    /* Gradients - Arabian Nights */
+    --gradient-hero: linear-gradient(135deg, hsl(240 85% 8%), hsl(235 95% 20%), hsl(40 100% 25%));
+    --gradient-aurora: linear-gradient(90deg, hsl(235 95% 45%), hsl(0 85% 50%), hsl(40 100% 45%));
+    --gradient-card: linear-gradient(145deg, hsl(240 90% 12%), hsl(240 85% 16%));
     
     /* Shadows & Effects */
-    --shadow-glow: 0 0 40px hsl(220 100% 50% / 0.4);
-    --shadow-aurora: 0 0 60px hsl(45 100% 50% / 0.3);
-    --shadow-card: 0 8px 32px hsl(240 65% 6% / 0.6);
+    --shadow-glow: 0 0 40px hsl(235 95% 45% / 0.4);
+    --shadow-aurora: 0 0 60px hsl(40 100% 45% / 0.3);
+    --shadow-card: 0 8px 32px hsl(240 85% 4% / 0.6);
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);

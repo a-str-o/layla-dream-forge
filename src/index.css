@@ -2,56 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 42Layla Design System - Where Dreams Meet Innovation */
+/* 42Layla Design System - Aladdin's Palace Theme */
 
 @layer base {
   :root {
-    /* Core Brand Colors - Night Sky & Dreams Theme */
-    --background: 240 12% 6%;
-    --foreground: 48 90% 95%;
+    /* Core Brand Colors - Aladdin Palace Theme */
+    --background: 240 30% 8%;
+    --foreground: 45 95% 95%;
 
-    --card: 240 15% 8%;
-    --card-foreground: 48 85% 92%;
+    --card: 240 35% 12%;
+    --card-foreground: 45 90% 92%;
 
-    --popover: 240 18% 10%;
-    --popover-foreground: 48 85% 92%;
+    --popover: 240 40% 15%;
+    --popover-foreground: 45 90% 92%;
 
-    /* Primary - Deep Celestial Blue */
-    --primary: 235 85% 55%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 235 85% 65%;
+    /* Primary - Royal Purple */
+    --primary: 280 85% 55%;
+    --primary-foreground: 45 95% 95%;
+    --primary-glow: 280 85% 65%;
 
-    /* Secondary - Mystical Purple */
-    --secondary: 270 75% 45%;
-    --secondary-foreground: 48 90% 95%;
+    /* Secondary - Mystic Teal */
+    --secondary: 180 75% 45%;
+    --secondary-foreground: 45 95% 95%;
 
-    /* Muted - Soft Night Tones */
-    --muted: 240 15% 15%;
-    --muted-foreground: 240 10% 60%;
+    /* Muted - Desert Stone */
+    --muted: 240 25% 20%;
+    --muted-foreground: 240 15% 65%;
 
-    /* Accent - Golden Dreams */
-    --accent: 45 95% 65%;
-    --accent-foreground: 240 15% 8%;
+    /* Accent - Golden Lamp */
+    --accent: 45 95% 60%;
+    --accent-foreground: 240 35% 12%;
 
     --destructive: 0 85% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 45 95% 95%;
 
-    --border: 240 15% 18%;
-    --input: 240 15% 15%;
-    --ring: 235 85% 55%;
+    --border: 240 25% 25%;
+    --input: 240 30% 18%;
+    --ring: 280 85% 55%;
 
     /* Design System Tokens */
     --radius: 0.75rem;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(240 15% 8%), hsl(235 85% 15%), hsl(270 75% 20%));
-    --gradient-aurora: linear-gradient(90deg, hsl(235 85% 55%), hsl(270 75% 45%), hsl(45 95% 65%));
-    --gradient-card: linear-gradient(145deg, hsl(240 18% 10%), hsl(240 15% 12%));
+    --gradient-hero: linear-gradient(135deg, hsl(240 35% 12%), hsl(280 85% 20%), hsl(45 95% 25%));
+    --gradient-aurora: linear-gradient(90deg, hsl(280 85% 55%), hsl(180 75% 45%), hsl(45 95% 60%));
+    --gradient-card: linear-gradient(145deg, hsl(240 40% 15%), hsl(240 35% 18%));
     
     /* Shadows & Effects */
-    --shadow-glow: 0 0 40px hsl(235 85% 55% / 0.3);
-    --shadow-aurora: 0 0 60px hsl(45 95% 65% / 0.2);
-    --shadow-card: 0 8px 32px hsl(240 15% 4% / 0.5);
+    --shadow-glow: 0 0 40px hsl(280 85% 55% / 0.3);
+    --shadow-aurora: 0 0 60px hsl(45 95% 60% / 0.2);
+    --shadow-card: 0 8px 32px hsl(240 35% 8% / 0.5);
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);

@@ -5,12 +5,51 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Star, ArrowLeft, Github, Mail, Lock, User } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
 
 const AuthPage = () => {
   const [isSignUp, setIsSignUp] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { user, signIn, signUp, signInWith42, signInWithGoogle } = useAuth();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      if (isSignUp) {
+        if (password !== confirmPassword) {
+          alert("Passwords don't match!");
+          return;
+        }
+        await signUp(email, password);
+      } else {
+        await signIn(email, password);
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handle42Login = () => {
+    const clientId = '2c8440d825085b8b3913d03a0388f768c9ed959c618273d0168ae88ad71316c0';
+    const redirectUri = encodeURIComponent(window.location.origin + '/auth/callback');
+    const authUrl = `https://api.intra.42.fr/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=public`;
+    window.location.href = authUrl;
+  };
 
   return (
     <div className="min-h-screen hero-gradient flex items-center justify-center p-4">
@@ -54,9 +93,24 @@ const AuthPage = () => {
           
           <CardContent className="space-y-6">
             {/* 42 School Login */}
-            <Button variant="hero" className="w-full text-lg py-6">
+            <Button 
+              variant="hero" 
+              className="w-full text-lg py-6" 
+              onClick={handle42Login}
+              disabled={loading}
+            >
               <Github className="mr-3 h-5 w-5" />
               Continue with 42 School
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              className="w-full text-lg py-6" 
+              onClick={signInWithGoogle}
+              disabled={loading}
+            >
+              <Mail className="mr-3 h-5 w-5" />
+              Continue with Google
             </Button>
             
             <div className="relative">
@@ -69,7 +123,7 @@ const AuthPage = () => {
             </div>
 
             {/* Email/Password Form */}
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {isSignUp && (
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-sm font-medium">
@@ -82,6 +136,8 @@ const AuthPage = () => {
                       type="text"
                       placeholder="Enter your full name"
                       className="pl-10 bg-background/50 border-border/50 focus:border-primary/50 focus:bg-background/80"
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
                     />
                   </div>
                 </div>
@@ -98,6 +154,9 @@ const AuthPage = () => {
                     type="email"
                     placeholder="Enter your email"
                     className="pl-10 bg-background/50 border-border/50 focus:border-primary/50 focus:bg-background/80"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </div>
               </div>
@@ -113,6 +172,9 @@ const AuthPage = () => {
                     type="password"
                     placeholder="Enter your password"
                     className="pl-10 bg-background/50 border-border/50 focus:border-primary/50 focus:bg-background/80"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                 </div>
               </div>
@@ -129,6 +191,9 @@ const AuthPage = () => {
                       type="password"
                       placeholder="Confirm your password"
                       className="pl-10 bg-background/50 border-border/50 focus:border-primary/50 focus:bg-background/80"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      required
                     />
                   </div>
                 </div>
@@ -152,8 +217,13 @@ const AuthPage = () => {
                 </div>
               )}
 
-              <Button variant="default" className="w-full text-lg py-6">
-                {isSignUp ? "Create Account" : "Sign In"}
+              <Button 
+                type="submit" 
+                variant="default" 
+                className="w-full text-lg py-6"
+                disabled={loading}
+              >
+                {loading ? "Loading..." : (isSignUp ? "Create Account" : "Sign In")}
               </Button>
             </form>
 

@@ -15,24 +15,28 @@ const AuthCallback = () => {
       if (code) {
         try {
           // Call our edge function to handle 42 OAuth
-          const { data, error } = await supabase.functions.invoke('auth-42', {
-            body: { code }
-          });
+        const response = await supabase.functions.invoke('auth-42', {
+          body: { code }
+        });
+
+        const { data, error } = response;
 
           if (error) {
             throw error;
           }
 
-          if (data.session_url) {
-            // Redirect to the magic link to authenticate the user
-            window.location.href = data.session_url;
-          } else {
-            toast({
-              title: "Authentication successful",
-              description: "Welcome to 42Layla!",
-            });
-            navigate('/');
-          }
+        if (data?.session_url) {
+          // Redirect to the magic link to authenticate the user
+          window.location.href = data.session_url;
+        } else if (data?.success) {
+          toast({
+            title: "Authentication successful",
+            description: "Welcome to 42Layla!",
+          });
+          navigate('/');
+        } else {
+          throw new Error('No session data received');
+        }
         } catch (error) {
           console.error('Authentication error:', error);
           toast({

@@ -95,10 +95,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const signInWith42 = async () => {
-    // This will be handled by the callback URL and edge function
     const clientId = '2c8440d825085b8b3913d03a0388f768c9ed959c618273d0168ae88ad71316c0';
-    const redirectUri = encodeURIComponent(window.location.origin + '/auth/callback');
+    const redirectUri = encodeURIComponent(`${window.location.origin}/auth/callback`);
     const authUrl = `https://api.intra.42.fr/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=public`;
+    
+    console.log('42 Auth URL:', authUrl);
+    console.log('Redirect URI:', `${window.location.origin}/auth/callback`);
+    
     window.location.href = authUrl;
   };
 
